@@ -1,0 +1,38 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 id="grade"></h1>
+        <script>
+
+            // for, while
+            const num = parseInt(prompt());
+            let msg = '';
+            for(let i =0;i<num;i++){
+                msg += 'hello';
+            }
+
+            //document.querySelector('h1#grade').textContent = msg;
+
+            let i=0;
+            while(i<num){
+                msg += 'hello';
+                i++;
+            }
+
+            document.querySelector('h1#grade').textContent = msg;
+
+
+            while(true){
+                msg +='hello';
+                i++;
+                if(i>=num){
+                    break; 
+                }
+            }
+
+
+        </script>
+    </body>
+</html>

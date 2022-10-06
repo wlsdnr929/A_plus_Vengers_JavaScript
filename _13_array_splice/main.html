@@ -1,0 +1,49 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1 id="grade">
+
+        </h1>
+        <script>
+
+            const myArray = [1,2,'apple','banana',3.14,true,false,2];
+
+            // 삭제하기 (중간에 있는 것)
+            // myArray.splice(1,1);  // 1번 인덱스로부터, 1개를 삭제
+            myArray.splice(1,2);  // 1번 인덱스로부터, 2개를 삭제
+
+            myArray.splice(1);  // 1번 인덱스로부터 다 지우기
+
+
+
+
+            // 삭제 후 추가
+            myArray.splice(1,1,'orange');  // 1번 인덱스로부터, 1개 지우고
+                                           // 그 자리에 'orange' 추가
+
+            myArray.splice(1,1,'orange','melon');  // 1번 인덱스로부터, 1개 지우고
+                                                   // 그 자리에 'orange','melon' 추가
+            
+
+            // 단순 추가
+            myArray.splice(1,0,'orange');  // 1번 인덱스에서 아무것도 지우지 않고
+                                           // 그 자리에 'orange' 추가
+
+            
+            myArray.splice(0,0,'orange');  //  myArray.unshift('orange');
+            
+            myArray.splice(myArray.length,0,'orange'); // myArray.push('orange');
+
+
+            console.log(myArray);
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

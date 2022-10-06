@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 id="h11">여기입니다.</h1>
+        <h1 id="h12">요기일까?</h1>
+        <h1 id="h13">여긴가?</h1>
+        <script>
+
+            // 사용자에게 입력받아서 홀/짝 구분하기
+            const userMsg = prompt();
+            const userNumber = parseInt(userMsg);  // 사용자 입력 문자열 --> 정수로
+            const result = userNumber%2;
+
+            let msg = "";
+            if(result == 1){
+                // 홀수
+                msg = userMsg + "는 홀수입니다."
+            }
+            else{
+                // 짝수
+                msg = userMsg + '는 짝수입니다.'
+            }
+
+            document.querySelector('h1#h13').textContent =msg;
+
+
+        </script>
+    </body>
+</html>

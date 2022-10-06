@@ -1,0 +1,94 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+
+            // sort
+            const c  = [45,33,22,11,7,99];
+            console.log("c is " + c)
+
+            // a,b 의 관계를 사용자가 정해라
+            // -> 관계에 따라 자동으로 정렬해줌
+
+            // 오름차순
+            c.sort( (a,b) => {
+                if(a < b)
+                return -1;
+                else if ( a > b)
+                return 1;
+                else
+                return 0;
+            } )
+
+            // 위와 동일
+            c.sort( (a,b) => a-b)
+
+
+            console.log("after sorting c is " + c)
+
+
+            // 복사본 만들어서 sort
+            // ->  sort는 원본 자체를 바꾸니까
+
+            // slice(a,b) 사용 : a부터 b 바로 전까지
+            // ---> 원본 바꾸지 않음
+            // [1,2,3]
+            // slice(1) --> [2,3]
+            // slice(0,2) --> [1,2]
+
+            const d = c.slice()  // c의 복사본
+            console.log('d id ' + d)
+
+            // splice(a,b) : a부터 b개 잘라냄
+            // ---> 원본 바꿈
+
+
+
+
+            // 문자열 정렬
+            const e = ['banana','apple','orange']
+            // const se = e.slice().sort( (a,b) => { return (a<b) ? -1 : (a>b)?1:0 })
+            // const se = e.slice().sort( (a,b) => (a<b) ? -1 : (a>b)?1:0 )
+            // 위 2개와 동일
+                const se = e.slice().sort( (a,b) => {
+                    if(a<b){
+                        return -1
+                    }else if(a>b){
+                        return 1
+                    }else{
+                        return 0
+                    }
+                 })
+
+            console.log('e is ' + e)
+            console.log('se is ' + se)
+
+
+            // 영어와 한글 섞여있다면
+            const f = ['호박','수박','사과','포도','banana','apple','orange']
+
+            // 이렇게 하면 영어가 앞으로 옴
+            const g = f.slice().sort((a,b) => (a<b) ? -1 : (a>b) ? 1 : 0)
+            // 이렇게 하면 한글이 앞으로 옴
+            const h = f.slice().sort((a,b) => a.localeCompare(b))
+
+            
+
+            // localeCompare : 지역성을 고려해줌(세부적인 조건을 맞춰줌)
+            // ex) 대소문자 구분 유무
+
+            const i = ['abc','Abc','zac','Zac']
+            const i1 = i.slice().sort((a,b) => (a<b)?-1:(a>b)?1:0)
+            // sensitivity 를 base로 ---> 대소문자 구별안함
+            const i2 = i.slice().sort((a,b) => a.localeCompare(b,{'sensitivity':'base'}))
+
+            console.log('i : ' + i)
+            console.log('i1 : ' + i1)
+            console.log('i2 : ' + i2)
+
+
+
+
+        </script>
+    </body>
+</html>

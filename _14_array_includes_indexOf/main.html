@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+
+            const myArray = [1,2,'apple','banana',3.14,true,false,2];
+
+            // includes
+            console.log(myArray.includes('apple'));  // true -> 'apple' 있음
+
+            
+            // 앞에서부터 찾기
+            // indexOf :  있으면 -> index 반환, 없으면 -> -1 반환
+            console.log('Apple 이 있냐? ' + myArray.indexOf('apple'));
+
+            // indexOf('apple',fromIndex)
+            //  --> 'apple'있냐, 근데 범위가 fromIndex부터 
+            console.log('Apple 이 있냐? ' + myArray.indexOf('apple',2));  // 2
+
+
+            // 뒤에서 부터 찾기
+            // lastIndexOf('apple',fromIndex)
+            //  --> 'apple'이 여러개 있다면, 마지막 인덱스 반환
+            //  --> 이 때, fromIndex가 있다면 거기부터 앞쪽으로 찾음
+            console.log('Apple 이 있냐? ' + myArray.lastIndexOf('apple')); 
+
+        </script>
+    </body>
+</html>

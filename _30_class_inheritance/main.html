@@ -1,0 +1,78 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            // Class : (object 들을 찍어냄)
+            // ---> create object
+            // ---> object를 일일이 만들 필요가 없음
+
+
+            'use strict' // 이제부터는 엄격하게 할 것임
+                         // 에러나면 바로바로 지적해줘라
+
+            class Person {
+                constructor(_name,_age){
+                    this.name = _name;
+                    this.age = _age;
+                }
+
+                show_info(){
+                    console.log(`${this.name} is ${this.age} yrs old. He(She) lives is in ${this.city}`)
+                }
+
+                is_older_than(_value){
+                    if(this.age > _value){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+
+                add_city_info(_city){
+                    // method 안에서 새로운 member 형성 가능
+                    this.city = _city;
+                }
+
+            }
+
+            const p = new Person('jim',20)
+            p.add_city_info('seoul')
+            const q = new Person('jane',21)
+            q.add_city_info('busan')
+
+            console.log(p)
+            console.log(q)
+
+            p.show_info();
+            q.show_info();
+
+            console.log(`${p.name} is older than 19?`)
+            console.log(p.is_older_than(19))
+
+
+
+
+
+            // Person을 상속 (inheritance) --> parent
+
+            class Student extends Person{
+                constructor(_name,_age,_dream){
+                    super(_name,_age);
+                    this.dream = _dream;
+                }
+
+                show_info(){
+                    super.show_info()
+                    console.log(`His(Her) dream is ${this.dream}`)
+                }
+
+            }
+
+            const s = new Student('tom',19,'pilot')
+            s.add_city_info('incheon')
+            s.show_info()
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <!-- 
+
+            <event capture phase> (event 생포 단계)
+                
+             - event 발생하면 위에서 부터 타고 들어감
+             - 위에서 부터 target phase까지
+             - 돌아갈 때는 거꾸로 : 안쪽에서 바깥쪽 (bubble phase) -> 물방울이 아래에서 위로 올라감
+             - *** event listener는 bubble phase 때 발생!!! ***
+                   -> 안쪽부터 실행되는 것으로 보임
+            
+
+            propagation -> event 들이 흘러다니는 것
+            stop propagation : bubble phase가 위로 올라가는 것 중 (자기 위부터 중지)
+            stop stopImmediatePropagation : bubble phase가 위로 올라가는 것 중 (자기와 같은 단계부터 중지)
+        
+            delegation -> 위임
+
+        -->
+
+        <div id="outside">
+            <div>
+                <input type="checkbox">
+                <label for="">운동</label>
+            </div>
+            <div>
+                <input type="checkbox">
+                <label for="">쇼핑</label>
+            </div>
+        </div>
+        <script>
+            const cp_div = document.querySelector('#outside') 
+            cp_div.addEventListener('click',(event)=>{
+                console.log('cp event 발생: ---> ',event.target.tagName); //  ---> input
+            })
+
+        </script>
+    </body>
+</html>

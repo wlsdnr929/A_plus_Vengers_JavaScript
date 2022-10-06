@@ -1,0 +1,50 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <script>
+
+            const person = {name:'찰스',age:20};
+
+            // function ---> method (특히 Object literal 안에 있는 함수)
+            // method 추가
+
+            person.sayHello = () =>{console.log('Hello!!!');};
+            person.sayHello2 = (v) => {console.log(v + '! Hi!');};
+            person.areYouOrderThan = (_age) => {
+                if(person.age > _age){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            };
+
+            person.sayHello();
+            person.sayHello2('찰스');
+
+            const check_age = 10;
+            console.log('Are you older than ' +check_age + '? ' +person.areYouOrderThan(check_age));
+            person.areYouOrderThan(10); 
+
+
+
+            // 가능
+            const a = {
+                name:'찰스',
+                detail:{
+                    name:'톰',
+                    age:10
+                }
+            };
+
+            console.log('---> '+a.detail['name']);
+            console.log('---> '+a.detail.name);
+
+
+        </script>
+
+    </body>
+</html>

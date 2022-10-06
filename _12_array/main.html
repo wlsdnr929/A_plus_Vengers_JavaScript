@@ -1,0 +1,56 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1></h1>
+        <script> 
+            // JavaScript에서의 배열은 '자료형'이 달라도 됨
+            // JavaScript에서의 배열은 중간에 '크기'가 달라져도 됨
+
+            const myArray = [1,2,'apple','banana',3.14,true];
+            console.log(myArray);
+            // 길이
+            console.log('myArray length : ' + myArray.length);
+
+            for(let i=0;i<myArray.length;i++){
+                console.log(myArray[i]);
+            }
+
+
+            // array in array
+            const myArray2 = [1,'apple',[3.14,true,'banana']];
+            console.log(myArray2);
+
+            for(let i=0;i<myArray2[2].length;i++){
+                console.log(myArray2[2][i]);
+            }
+
+
+
+            // pop() :  뒤에있는 것 지우기
+            console.log('before: '+myArray);
+            const value = myArray.pop();
+            console.log('pop: '+value);
+            console.log('after: '+myArray);
+
+            // shift() : 앞에있는 것 지우기
+            console.log('before: '+myArray);
+            const value2 = myArray.shift();
+            console.log('pop: '+value2);
+            console.log('after: '+myArray);
+
+
+            // push() : 뒤에서 추가
+            console.log('before: '+myArray);
+            myArray.push('orange');
+            console.log('after: '+myArray);
+
+            // unshift() :  앞에 추가
+            console.log('before: '+myArray);
+            myArray.unshift('orange');
+            console.log('after: '+myArray);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 id="grade">
+
+        </h1>
+        <script>
+
+            // function
+
+            // parameter : 함수선언 -> 함수 만들 때 괄호안에 쓰는 것
+            // argument : 함수호출 -> 함수 사용할 때 괄호안에 쓰는 것
+
+            // parameter 와 argument의 개수가 달라도 실행됨,,,
+
+            function sayHello(){  
+                console.log('안녕하세요');
+            }
+
+            function sayHelloReturn(){  
+                console.log('안녕하세요');
+                return '바이!';
+            }
+
+            function sayHelloArray(values){  
+                console.log(values[0]+'살 '+values[1]+'씨', '안녕하세요');
+                return '바이!';
+            }
+
+            function sayHelloReturnArray(){  
+                console.log('안녕하세요');
+                return ['바이!',1,2,true];
+            }
+
+            function sayHelloWithParameter(name){  // --> parameter
+                console.log(name + '씨, 안녕하세요');
+            }
+
+            sayHello();     
+            sayHelloWithParameter('찰스');    //  --> argument
+            sayHelloArray([15,'존']);
+
+
+
+
+            // *** 함수 만드는 또 다른 방법 *** 
+
+            // arrow funcion
+
+            const k = () => {
+                console.log('안녕하세요2');
+            }
+
+            k();
+
+
+
+
+            // *** 함수 만드는 또 다른 방법 *** 
+
+            const v = function (){
+                console.log('안녕하세요3');
+            }
+
+            v();
+
+
+
+            // return 값
+            // 반환값 여러가지 하고 싶으면 -> 배열로
+            console.log('sayHello의 반환값: ' + sayHello());  // undefined
+            console.log('sayHelloReturn 반환값: ' + sayHelloReturn());  // 바이!
+            const res = sayHelloReturnArray();
+            console.log(res);
+
+        </script>
+    </body>
+</html>

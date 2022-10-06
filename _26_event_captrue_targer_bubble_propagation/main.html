@@ -1,0 +1,84 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <!-- 
+
+            <event capture phase> (event 생포 단계)
+                
+             - event 발생하면 위에서 부터 타고 들어감
+             - 위에서 부터 target phase까지
+             - 돌아갈 때는 거꾸로 : 안쪽에서 바깥쪽 (bubble phase) -> 물방울이 아래에서 위로 올라감
+             - *** event listener는 bubble phase 때 발생!!! ***
+                   -> 안쪽부터 실행되는 것으로 보임
+            
+
+            propagation -> event 들이 흘러다니는 것
+            stop propagation : bubble phase가 위로 올라가는 것 중 (자기 위부터 중지)
+            stop stopImmediatePropagation : bubble phase가 위로 올라가는 것 중 (자기와 같은 단계부터 중지)
+            
+        -->
+
+        <div>
+            <div>
+                <input type="checkbox">
+                <label for="">운동</label>
+            </div>
+            <div>
+                <input type="checkbox">
+                <label for="">쇼핑</label>
+            </div>
+        </div>
+        <script>
+            // input에 이벤트 걸기
+            const inputs = document.querySelectorAll('input')
+            inputs.forEach( (_ip,_idx) =>{
+                // bubble phase에 수행되는 listener
+                _ip.addEventListener('click',(event)=>{
+                    console.log(_idx + ' bubble phase: input click event 발생')
+                    // event.stopPropagation()  // propagation 중지(자기 위 부터)
+                    event.stopImmediatePropagation()// propagation 중지(자기와 같은 단계 부터)
+                })
+                // capture phase에 수행되는 listener
+                _ip.addEventListener('click',()=>{
+                    console.log(_idx + ' capture phase: input click event 발생')
+                },true)
+            })
+
+
+
+
+            inputs.forEach( (_ip,_idx) =>{
+                // 두 번째 bubble phase에 수행되는 listener
+                _ip.addEventListener('click',()=>{
+                    console.log(_idx + ' 두 번째 bubble phase: input click event 발생')
+                })
+            })
+
+
+
+            // division에 이벤트 걸기
+            const divs = document.querySelectorAll('div')
+            divs.forEach( (_dv,_idx) =>{
+                // bubble phase에 수행되는 listener
+                _dv.addEventListener('click',()=>{
+                    console.log(_idx + ' bubble phase: div에 대한 event 발생')
+                })
+                // capture phase에 수행되는 listener
+                _dv.addEventListener('click',()=>{
+                    console.log(_idx + ' capture phase: div에 대한 event 발생')
+                },true)
+            })
+
+
+            //  event 발생 순서
+            /*
+                (안쪽에 있는) input -> (바깥쪽에 있는) div
+            */
+
+
+        </script>
+    </body>
+</html>

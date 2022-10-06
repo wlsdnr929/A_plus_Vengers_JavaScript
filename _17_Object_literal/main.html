@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+
+            // *** Literal  --> "값" 자체 ***
+            // 1,2,3     Integer literal
+            // 3.14      Floating point number literal
+            // 'hello'   string literal
+
+
+            // *** Object literal ***  --> 인덱스 값을 내가 원하는 것을 사용가능,,,
+             const person = {name:'찰스',age:20};   /// const person = ['찰스',20] --> 배열
+            
+            console.log('person name: ' + person.name);
+            console.log('person name: ' + person['name']);
+
+            person.age = 35;
+            console.log('person age: '+person.age);
+
+
+            // Object의 key 값 확인
+            console.log('keys: ' + Object.keys(person));  // --> ['name','age']
+
+            // Object의 values 값 확인
+            console.log('values: ' + Object.values(person));  // --> ['찰스','35']
+
+
+
+
+        </script>
+    </body>
+</html>

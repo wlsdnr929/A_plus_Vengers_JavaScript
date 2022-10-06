@@ -1,0 +1,50 @@
+<html>
+    <head></head>
+    <body>
+        
+        <div>
+            <h1 id="count_down"></h1>
+            </h1>
+        </div>
+
+        <script>
+
+            /*
+
+            // setTimeout : 일정 시간 후에 실행 (한 번만)
+
+            const hello = () => {console.log('안녕')}
+
+            setTimeout(hello,3000)  // millisecond, 1/1000 초
+            setTimeout( () => {console.log('화살 함수 안녕')},4000)
+
+
+            // setInterval : 일정 주기로 실행 (계속)
+            // clearInterval : 주기 종료
+            // _id = setInterval()
+            // clearInterval(_id)
+
+            const _id =  setInterval(hello,1000)  // 1초마다 실행
+            setTimeout( () => {
+                clearInterval(_id)
+                console.log('clearInterval 호출되었음')
+            }, 5000) // 5초 됐을 때 반복 종료
+
+
+            */
+
+            let timer = 10
+            const _id = setInterval( ()=>{
+                const cp_h1 = document.querySelector('#count_down')
+                cp_h1.textContent = timer
+                timer = timer-1
+                if(timer < 0){
+                    clearInterval(_id)
+                    cp_h1.textContent = 'Done'
+                }
+            },1000)
+
+        </script>
+
+    </body>
+</html>

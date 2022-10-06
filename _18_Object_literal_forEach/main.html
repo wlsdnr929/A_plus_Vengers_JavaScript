@@ -1,0 +1,30 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+
+            const showOL = (ol) =>{
+                const keys = Object.keys(ol);
+                keys.forEach((elem,idx) => {
+                    console.log(elem + ' ---> '+ol[elem]);
+                });
+            };
+
+
+            const showOL2 = (ol) =>{
+                const keys = Object.keys(ol);
+                for(let i=0;i<keys.length;i++){
+                    console.log(keys[i] + '=== > '+ol[keys[i]]);
+                }
+            };
+
+
+            const person = {name:'찰스',age:20};
+            showOL(person);
+            showOL2(person);
+
+        </script>
+    </body>
+</html>

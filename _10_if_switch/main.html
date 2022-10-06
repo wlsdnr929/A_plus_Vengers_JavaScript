@@ -1,0 +1,52 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <h1 id="grade">
+
+        </h1>
+
+        <script>
+            const score = parseInt(prompt());
+
+            // if
+
+            // if(score >=90){
+            //     document.querySelector('h1#grade').textContent = 'A';
+            // }
+            // else if(score >=80){
+            //     document.querySelector('h1#grade').textContent = 'B';
+            // }
+            // else{
+            //     document.querySelector('h1#grade').textContent = 'C';
+            // }
+
+
+
+            // switch
+
+            // switch(score){
+            //     case 100:
+            //         document.querySelector('h1#grade').textContent = 'A';
+            //         break;
+            //     case 90:
+            //         document.querySelector('h1#grade').textContent = 'B';
+            //         break;
+            //     default:
+            //         document.querySelector('h1#grade').textContent = '나머지';
+            //         break;
+            // }
+
+
+
+
+            // 삼항연산자
+            // 50  --> pass, otherwise --> fail
+            const msg = score >=50 ? 'pass' : 'fail';
+            document.querySelector('h1#grade').textContent = msg;
+
+        </script>
+    </body>
+</html>

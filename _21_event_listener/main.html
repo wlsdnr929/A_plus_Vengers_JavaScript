@@ -1,0 +1,65 @@
+<html>
+    <head></head>
+    <body>
+        <h1>숫자를 입력하세요</h1>
+        <div>
+            <input id = "input_num" type="text">
+            <button id= "btn_submit">제출</button>
+            <button id= "btn_chgClr">색바꾸기</button>
+        </div>
+        <h1 id='result'></h1>
+        <script> 
+
+            // 색깔 :  Red -> Green -> Blue
+            const clr_array = ['red','green','blue'];
+            let clr_idx = 0;
+
+            const w_btn_sumbmit = document.querySelector('#btn_submit');
+            const w_btn_chgClr = document.querySelector('#btn_chgClr');
+            const w_input = document.querySelector('#input_num');
+            const w_h1_result = document.querySelector('#result');
+
+            // n 이 짝수면 true, 홀수면 false
+            const isEven  = (n) => {
+                if(n%2==0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            w_btn_sumbmit.addEventListener('click',()=>{
+                console.log('버튼 눌렸음!!');
+
+                const temp = parseInt(w_input.value);
+
+                // NaN : Not a Number => null 이라고 봐도 됨
+                if(!temp){
+                    w_h1_result.textContent = "똑바로 입력하세요";
+                }
+                else{
+                    let decision = '훌수';
+                    if(isEven(temp)===true){
+                        decision = '짝수';
+                    }
+                    
+                w_h1_result.textContent = temp + ' 는 ' + decision + '입니다.' ;
+                }
+
+                // 제출버튼 누르면 입력창 clear
+                w_input.value  = '';
+                // 커서 다시 앞으로 놓기
+                w_input.focus();
+            })
+
+            w_btn_chgClr.addEventListener('click',()=>{
+                clr_idx = (clr_idx +1) % clr_array.length;
+                console.log('현재 색은 '+ clr_array[clr_idx]);
+
+                w_h1_result.style.color = clr_array[clr_idx];
+
+            })
+
+        </script>
+    </body>
+</html>
