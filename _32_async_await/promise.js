@@ -22,25 +22,25 @@ function B(){
 }
 
 
-const a = fetchUser()  // a는 Promise
+// const a = fetchUser()  // a는 Promise
 
-a
-.then((v)=>{
-    console.log(`fetchUser result: ${v}`)
-})
+// a
+// .then((v)=>{
+//     console.log(`fetchUser result: ${v}`)
+// })
 
 
 
 
 // 위의 것을 더 쉽게 사용해보면
-async function async_fetchUser(a){   // async 붙으면 반환값은 무조건 Promise라고 생각해도 됨
+async function async_fetchUser(a){   // async 붙으면 반환값은 무조건 "Promise"라고 생각해도 됨
     console.log(`Promise 실행`)
 
     // await : 함수 B를 보면 3초후에 실행되는 데, 
     //         이것이 끝날 때까지 기다려줌
     // --> await는 async 함수 내에서만, 다른 promise의 종료를 기다릴 때 사용 가능
     const k = await B()   
-
+    console.log('k is '+k);
     if(k >= 0){
         return '실행 끝'  // resolve에 해당하는 부분
     }
@@ -51,7 +51,7 @@ async function async_fetchUser(a){   // async 붙으면 반환값은 무조건 P
 
 
 const a1 = async_fetchUser(-10)  // a1은 Promise
-
+console.log('a1 : '+a1)
 a1
 .then((v)=>{
     console.log(`fetchUser result: ${v}`)
